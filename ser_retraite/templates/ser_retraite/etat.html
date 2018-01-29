@@ -1,0 +1,35 @@
+{% load static %}
+{% block JheadScript %}
+    <script src="{% static 'js/retraite/engform.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block stylesheet%}
+	<link href="{% static 'css/accueil.css'%}" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/recherche.css'%}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+<div class="panel-heading">
+    <span class="pan_title">Nouvel Etat</span>
+    <button type="button" class="col-sm-offset-5 close" id="close">×</button>
+</div>
+<form id="etat_id" action="{% url 'addEtat' %}" method="post" class="niceform panel-body well" novalidate enctype="multipart/form-data">{% csrf_token %}
+        <fieldset >
+
+            <div class="col-sm-9">
+            <dl class="dl-horizontal">
+                <dt>DATE</dt>
+                <dd><input id="id_date_en" min="0" name="date" type="DATE" required=""></dd>
+                <dd></dd>
+            </dl>
+            <dl class="dl-horizontal">
+                <dt>Choisir un fichier</dt>
+                <dd>{{ form.file}}</dd>
+                <dd>{{ form.file.errors }}</dd>
+            </dl>
+
+            <div >
+                <input class="btn btn-success " type="submit" value="valider" id="valEng" />
+            </div>
+                </div>
+        </fieldset>
+
+</form>

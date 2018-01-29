@@ -1,0 +1,33 @@
+{% load static %}
+{% block JheadScript %}
+    <script src="{% static 'ser_medical/js/ajoutClinik.js' %}" type="text/javascript"></script>
+{% endblock %}
+<form id="ajclForm" action="{% url 'ajouter_clinique' %}" method="post" class="niceform" novalidate enctype="multipart/form-data">{% csrf_token %}
+    <fieldset id="" class="ctn1">
+        <legend class="ctn1">Nouvelle Clinique</legend>
+        <div class="row col-lg-11"> <dl class="dl-horizontal">
+            <dt>{{ form.code.label_tag }}</dt>
+            <dd>{{ form.code }}</dd>
+            <dd>{{ form.code.errors }}</dd>
+        </dl>
+        <dl class="dl-horizontal">
+            <dt>{{ form.libele.label_tag }}</dt>
+            <dd>{{ form.libele }}</dd>
+            <dd>{{ form.libele.errors }}</dd>
+        </dl>
+        <dl class="dl-horizontal">
+            <dt>{{ form.pays.label_tag }}</dt>
+            <dd>{{ form.pays }}</dd>
+            <dd>{{ form.pays.errors }}</dd>
+        </dl>
+        <dl class="dl-horizontal">
+            <dt>{{ form.type.label_tag }}</dt>
+            <dd>{{ form.type }}</dd>
+            <dd>{{ form.type.errors }}</dd>
+        </dl></div>
+
+            <input class="row  col-sm-offset-3 col-sm-2 btn btn-success" type="submit" value="Submit" />
+
+    </fieldset>
+
+</form>

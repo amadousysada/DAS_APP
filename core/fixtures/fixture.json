@@ -1,0 +1,46 @@
+[
+  {
+    "model": "ser_medical.Clinique",
+    "pk": "ST0008",
+    "fields": {
+      "libele":"Clinique Megrine",
+      "pays" : "Tunisie",
+      "type": "Etranger"
+    }
+  },
+  {
+    "model": "ser_medical.Clinique",
+    "pk": "ST0009",
+    "fields": {
+      "libele":"Clinique Carthagene",
+      "pays" : "Tunisie",
+      "type": "Etranger"
+    }
+  },
+  {
+    "model": "core.Employe",
+    "pk": "12017",
+    "fields": {
+      "cnam":"12017",
+      "nom_prenom" : "Med Ali",
+      "date_emb": "2017-08-06 00:00:00",
+      "date_dep":"2027-08-06 00:00:00",
+      "statut" : "actif",
+      "civilite": "Homme"
+    }
+
+  },
+  {
+    "model": "core.Employe",
+    "pk": "12020",
+    "fields": {
+      "cnam":"12020",
+      "nom_prenom" : "Sy Amadou",
+      "date_emb": "2017-08-06 00:00:00",
+      "date_dep":"2027-08-06 00:00:00",
+      "statut" : "actif",
+      "civilite": "Homme"
+    }
+
+  }
+]

@@ -1,0 +1,39 @@
+<table id="lprise" class="table table-striped table-hover table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                        {% if eng%}
+                            <caption><span class="pan_title">Engagement</span></caption>
+                            <thead>
+                                <tr class=" col-lg-1">
+                                    <th>DATE</th>
+                                    <th>MONTANT</th>
+                                    <th>MOTIF</th>
+                                    <th>TYPE</th>
+                                </tr>
+                            </thead>
+                        {%endif%}
+                        <tbody>
+                            {% for eng in eng %}
+                            <tr>
+                                <td >{{eng.date_en}}</td>
+                                <td >{{eng.montant}}</td>
+                                <td>{{eng.motif}}</td>
+                                <td >{{eng.type}}</td>
+                                <td><a href="#" data-toggle="modal" title="fiche circulation prise en charge" class="icon-1" data-target="#_{{piece.id}}_p1" ></a></td>
+                                <td><a href="#" data-toggle="modal" title="Prise en charge" class="icon-1" data-target="#_{{piece.id}}_p2" ></a></td>
+
+                            </tr>
+                            <div id="_{{piece.id}}_p1" class="modal" role="dialog" aria-labelledby="_{{piece.id}}_title1" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" data-dismiss="modal" class="close" aria-hidden="true">&times;</button>
+                                            <span class="pan_title" id="_{{piece.id}}_title1">Fiche de Circulation Prise en Charge</span>
+                                        </div>
+                                        <div class="modal-body"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% empty %}
+                            <tr><td>PAS D'AVANCE IDR PRISE</td></tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>

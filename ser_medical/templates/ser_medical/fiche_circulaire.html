@@ -1,0 +1,138 @@
+<style>
+    body {
+      background-color: #f7f7f7;
+    }
+    .ctnu{
+        margin-left:20px;
+    }
+    .dl-horizontal dd {
+        margin-left: 180px;
+    }
+    .dl-horizontal dt {
+        float: left;
+        width: 160px;
+        overflow: hidden;
+        clear: left;
+        text-align: right;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .espace{margin-top:80px;}
+    .espace1{margin-top:25px;}
+    .entete ul{
+        list-style:none;
+    }
+    .pan_title {
+        font-family: 'Lobster', cursive;
+        font-size: 25px;
+        font-weight: 15px;
+        color:  #009900;
+    }
+    .pce{
+        font-family: 'Lobster', cursive;
+        font-size: 15px;
+        font-weight: 105px;
+        color:  #000;}.titrep1{
+        margin-left:40px;
+    }
+    .col-sm-offset-9 {
+        margin-left: 65%;
+    }
+    .col-sm-offset-2 {
+        margin-left: 16.66666667%;
+    }
+    .col-sm-offset-8 {
+        margin-left: 66.66666667%;
+    }
+</style>
+<div>
+
+    <div class="">
+        <div class="entete">
+            <ul class="devise">
+                <li>BANQUE CENTRALE DE MAURITANIE</li>
+                <li>DIRECTION GENERALE DE </li>
+                <li>L'ADMINISTRATION ET DE LA LOGISTIQUE</li>
+                <li>DIRECTION DES AFFAIRES SOCIALES</li>
+
+            </ul>
+        </div>
+        <div class="espace1"></div>
+        <div class="col-sm-offset-9">Nouakchott le {{piece.date_soin.day}}/{{piece.date_soin.month}}/{{piece.date_soin.year}}</div>
+        <div class="espace1"></div>
+        <div class="titrep">
+            <span class="col-sm-offset-2 pce">FICHE DE CIRCULATION PRISE EN CHARGE</span>
+        </div>
+
+        <div class="espace"></div>
+        <div class="">
+            <dl class="dl-horizontal">
+                <dt>Nom & Penom :</dt>
+                <dd>{{ piece.Nom_prenom }}</dd>
+            </dl>
+            <div class="espace1"></div>
+
+            <dl class="dl-horizontal">
+                <dt>Id du patient :</dt>
+                <dd>{{ piece.id_patient}}</dd>
+            </dl>
+            <div class="espace1"></div>
+            <dl class="dl-horizontal">
+                <dt>Matricule :</dt>
+                <dd>{{piece.Matricule.matricule}}</dd>
+            </dl>
+            <div class="espace1"></div>
+            <dl class="dl-horizontal">
+                <dt>Nat medical :</dt>
+                <dd>{{ piece.description }}</dd>
+            </dl>
+            <div class="espace1"></div>
+            <dl class="dl-horizontal">
+                <dt>Stru. sanitaire :</dt>
+                <dd>{{ piece.clinique }}</dd>
+            </dl>
+            <div class="espace1"></div>
+            {% if piece.chef_sec == "" %}
+                <dl class="dl-horizontal">
+                    <dt>A. chef section interne :</dt>
+                    <dd>En attente de decision</dd>
+                </dl>
+                <div class="espace1"></div>
+            {% else%}
+                <dl class="dl-horizontal">
+                    <dt>A. chef section interne :</dt>
+                    <dd>{{ piece.chef_sec }}</dd>
+                </dl>
+                <div class="espace1"></div>
+            {% endif%}
+            {% if piece.chef_serv == ""%}
+                <dl class="dl-horizontal">
+                    <dt>A. chef service :</dt>
+                    <dd>En attente de decision</dd>
+                </dl>
+                <div class="espace1"></div>
+            {% else %}
+                <dl class="dl-horizontal">
+                    <dt>A. chef service :</dt>
+                    <dd>{{ piece.chef_serv }}</dd>
+                </dl>
+                <div class="espace1"></div>
+            {% endif%}
+            {% if piece.dir == ""%}
+                <dl class="dl-horizontal">
+                    <dt>Decision directeur :</dt>
+                    <dd>En attente de decision</dd>
+                </dl>
+            {% else %}
+                <dl class="dl-horizontal">
+                    <dt>Decision directeur :</dt>
+                    <dd>{{ piece.dir }}</dd>
+                </dl>
+            {% endif%}
+
+
+
+
+        </div>
+    </div>
+</div>

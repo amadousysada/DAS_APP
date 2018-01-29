@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load staticfiles %}
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="{% static 'core/js/form_js.js' %}" type="text/javascript"></script>
+<script type="text/javascript">
+    // Definition of global variables for javascript context
+    var contact_url = '{% url 'contact' %}';
+</script></head>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <form id="contact" action="{% url 'contact' %}" method="post" class="niceform" novalidate>{% csrf_token %}
+        <dl>
+            <dt>{{ form.name.label_tag }} :</dt>
+            <dd>{{ form.name }}</dd>
+            <dd>{{ form.name.errors }}</dd>
+        </dl>
+        <dl>
+            <dt>{{ form.firstname.label_tag }} :</dt>
+            <dd>{{ form.firstname }}</dd>
+            <dd>{{ form.firstname.errors }}</dd>
+        </dl>
+        <dl>
+            <dt>{{ form.email.label_tag }} :</dt>
+            <dd>{{ form.email }}</dd>
+            <dd>{{ form.email.errors }}</dd>
+        </dl>
+        <dl>
+            <dt>{{ form.password.label_tag }} :</dt>
+            <dd>{{ form.password }}</dd>
+            <dd>{{ form.password.errors }}</dd>
+        </dl>
+        <dl>
+            <dt>{{ form.message.label_tag }} :</dt>
+            <dd>{{ form.message }}</dd>
+            <dd>{{ form.message.errors }}</dd>
+        </dl>
+        <div class="break">
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
+{% endblock%}

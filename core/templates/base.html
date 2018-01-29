@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        // Definition of global variables for javascript context
+        var home_url = '{% url 'login_page' %}';
+        var logout_url = '{% url 'logout_page' %}';
+        var search_url = '{% url 'search_page' %}';
+        var ajouterclinik_url = '{% url 'ajouter_clinique' %}';
+        var ajouterpiece_url = '{% url 'nouv_piece_compt' %}';
+        var ajouterprise_url = '{% url 'addCharge' %}';
+        var ajouterordo_url = '{% url 'addOrdonnance' %}';
+        var show_per_page = 3;
+        var current_page = 0;
+    </script>
+    <!--Fichiers Javascript-->
+    <script src="{% static 'core/js/jquery/jquery-3.2.1.min.js' %}"              type="text/javascript"></script>
+    <script src="{% static 'core/js/bootstrap/bootstrap.min.js' %}"         type="text/javascript"></script>
+    <script src="{% static 'core/js/fusioncharts.js' %}"                    type="text/javascript"></script>
+    <script src="{% static 'core/js/fusioncharts.charts.js' %}"             type="text/javascript" ></script>
+    <script src="{% static 'core/js/themes/fusioncharts.theme.fint.js' %}"  type="text/javascript" ></script>
+
+
+    <!--Fichiers css-->
+    <link href="{% static 'core/images/bcm3.png' %}"                            rel="shortcut icon"     type="image/png" />
+    <link href="{% static 'core/js/date/jquery-ui.theme.min.css'%}"             rel="stylesheet"        type="text/css">
+    <link href="{% static 'core/js/date/jquery-ui.structure.min.css'%}"  rel="stylesheet"        type="text/css">
+    <link href="{% static 'core/js/date/jquery-ui.min.css'%}" rel="stylesheet" type="text/css">
+
+    <link href="{% static 'core/css/bootstrap.min.css'%}" rel="stylesheet" type="text/css">
+    <link href="{% static 'core/css/navbar.css'%}" rel="stylesheet" type="text/css">
+    <link href="{% static 'core/css/home.css'%}" rel="stylesheet" type="text/css">
+
+
+
+
+    {% block JheadScript %}{% endblock%}
+    {% block stylesheet %}{% endblock %}
+    <title>{% block title%}{% endblock %}</title>
+</head>
+
+
+<body>
+    {% block navbar%}
+        <div class="container row templatemo_middle" >
+            <ul class="list-inline">
+                <li class="mid_left">
+                    <div class="mid_title">{% block service%}Direction des Affaires Sociales{% endblock %}</div>
+                </li>
+                <li>
+                    <div class="alert alert-success alert-dismissable"
+                        style="display: none">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <span id="ctnAlerte">ppppp</span>
+                    </div>
+                </li>
+                <li class="logo">
+                    <img src="{% static 'core/images/bcm3.png' %}" alt="logo BCM" width="150" height="100">
+                </li>
+            </ul>
+        </div>
+    {% endblock%}
+
+    {% block content %}{% endblock %}
+    <footer></footer>
+</body>
+</html>

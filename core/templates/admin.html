@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+{% block JheadScript %}
+    <script src="{% static 'ser_medical/js/smedical.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block stylesheet%}
+        <link href="{% static 'ser_medical/css/accueil.css'%}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block service%}Directeur de la DAS{% endblock %}
+{% block navbar%} {% endblock%}
+{% block content%}
+{% if user.is_authenticated %}
+<div class="container row ">
+	<ul  class="nav nav-tabs panel panel-default  col-sm-offset-2 col-sm-11">
+        <li class="dropdown">
+			<a href="#clinique" class="dropdown-toggle pan_title2" data-toggle="dropdown">Stats<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="#listeclinique" id="lc" class="pan_title2">Globale</a></li>
+				<li class="divider"></li>
+				<li><a href="#ajouterclinique" id="ajc" class="pan_title2">Employe</a></li>
+			</ul>
+		</li>
+		<li ><img width="2" height="40" src="{% static 'core/images/shared/nav/divider.jpg' %}"></li>
+		<li class="dropdown">
+			<a href="#piece" class="dropdown-toggle pan_title2" data-toggle="dropdown">
+				prise en charge medicale<span class="badge red">24</span>
+			</a>
+			<ul class="dropdown-menu">
+				<li><a href="#" id="lpcm" class="pan_title2">Liste</a></li>
+				<li class="divider"></li>
+				<li><a href="#" id="pcv" class="pan_title2">Validées</a></li>
+                <li class="divider"></li>
+				<li><a href="#" id="pcn" class="pan_title2">En attente</a></li>
+                <li class="divider"></li>
+				<li><a href="#" id="pcr" class="pan_title2">Rejetées</a></li>
+                <li class="divider"></li>
+				<li><a href="#" id="pcs" class="pan_title2">Stats</a></li>
+			</ul>
+		</li>
+		<li ><img width="2" height="40" src="{% static 'core/images/shared/nav/divider.jpg' %}"></li>
+
+		<!--========================================-->
+
+		<li class="dropdown">
+			<a href="#piece" class="dropdown-toggle pan_title2" data-toggle="dropdown">Autre<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="#" id="lpc" class="pan_title2">Pelerinage</a></li>
+				<li class="divider"></li>
+				<li><a href="#" id="adO" class="pan_title2">Ordonnance</a></li>
+                <li class="divider"></li>
+				<li><a href="#" id="adA" class="pan_title2">Avance IDR</a></li>
+                <li class="divider"></li>
+				<li><a href="#" id="" class="pan_title2">Allocation</a></li>
+
+			</ul>
+		</li>
+		<li ><img width="2" height="40" src="{% static 'core/images/shared/nav/divider.jpg' %}"></li>
+    </ul>
+</div>
+<div class="panel panel-default container" id="smedContenu"></div>
+{%endif%}
+{% endblock %}

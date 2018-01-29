@@ -1,0 +1,49 @@
+.niceform dl { clear: left;margin: 0; }
+
+.niceform dt { float: left;text-align: right;width: 120px;line-height: 25px;margin: 0 10px 10px 0; }
+
+.niceform dd { float: left;margin-left: 10px; }
+
+.niceform ul.errorlist { float: left;color: white; margin: -3px 0 3px 0;list-style: none; }
+
+.niceform .break {
+    clear: left;
+    margin-left: 50px;
+    font-family: 'Lobster', cursive;
+    font-size: 24px;
+    font-weight: 20px;
+    color:  #008080;
+    width:25%;
+    height:50%;
+    border:none;
+    background:none;}
+
+.niceform ul.errorlist li {
+    padding: 5px 3px 4px 10px;
+    background: rgb(255, 0, 0); /* ie 6,7,8 */
+    background: rgba(255, 0, 0, 0.4);
+    position: relative;
+    -moz-border-radius:    10px;
+    -webkit-border-radius: 10px;
+    border-radius:         10px;
+}
+.niceform ul.errorlist li:before {
+    content:"";
+    position: absolute;
+    right: 100%;
+    top: 8px;
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-right: 12px solid rgba(255, 0, 0, 0.4);
+    border-bottom: 6px solid transparent;
+
+}
+#bdy{
+-webkit-box-shadow: 1px -1px 0px 8px rgba(47,112,95,1);
+-moz-box-shadow: 1px -1px 21px 8px rgba(47,112,95,1);
+box-shadow: 1px -1px 21px 8px rgba(47,112,95,1);}
+#btn1{
+margin-top:30px;
+margin-right:20px;
+clear:both;}

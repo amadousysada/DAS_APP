@@ -1,0 +1,66 @@
+{% load static %}
+{% block JheadScript %}
+    <script src="{% static 'ser_medical/js/pCharge.js' %}" type="text/javascript"></script>
+{% endblock %}
+<div class="panel-heading" id="pan_title">Nouvelle Prise en Charge Medicale</div>
+<form id="charge_id" action="{% url 'addCharge' %}" method="post" class="niceform panel-body " novalidate enctype="multipart/form-data">
+        {% csrf_token %}
+    <fieldset class="well">
+            <legend></legend>
+        <div class="row">
+            <div class="col-sm-6">
+            <dl>
+                <dt>Nom & Penom</dt>
+                <dd>{{ form.Nom_prenom }}</dd>
+                <dd>{{ form.Nom_prenom.errors }}</dd>
+            </dl>
+
+            <dl>
+                <dt>Identification du patient</dt>
+                <dd>{{ form.id_patient}}</dd>
+                <dd>{{ form.id_patient.errors }}</dd>
+            </dl>
+            <dl>
+                <dt>Matricule</dt>
+                <dd>{{ form.matricule}}<img width="75" height="50" src="{% static 'ser_medical/images/blueeye.png'%}"></dd>
+
+
+                <!--<input id="id_matricule" name="matricule" type="number" required="">-->
+            </dl>
+                <!--<input id="id_montant" name="montant" type="number" required="" class="errr">-->
+
+            <dl>
+                <dt>Nature de l'acte medical</dt>
+                <dd>{{ form.description }}</dd>
+                <dd>{{ form.description.errors }}</dd>
+            </dl></div>
+<div class="col-sm-5">
+            <dl>
+                <dt>Structure sanitaire</dt>
+                <dd>{{ form.clinique }}</dd>
+                <dd>{{ form.clinique.errors }}</dd>
+            </dl>
+
+            <dl>
+                <dt>Avis chef section interne</dt>
+                <dd>
+                    <select id="id_chef_sec" name="chef_sec" required="">
+                        <option value="" selected="selected">----------------</option>
+                        <option value="defavorable">defavorable</option>
+                        <option value="favorable">favorable</option>
+                    </select>
+                </dd>
+            </dl>
+
+            </div>
+
+
+
+            <div class="">
+                <input class="btn btn-success" type="submit" value="Ajouter" />
+            </div>
+        </div>
+        </fieldset>
+
+</form>
+<div class="row"><section id="employe"></section></div>

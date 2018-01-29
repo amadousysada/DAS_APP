@@ -1,0 +1,48 @@
+{% load static%}
+{% block stylesheet%}
+	<link href="{% static 'ser_medical/css/stats.css'%}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block JheadScript %}
+    <script src="{% static 'ser_medical/js/stats.js' %}" type="text/javascript"></script>
+{% endblock %}
+<div class="row well">
+    <form id="statsform" class="" action="" method="post"  novalidate>{% csrf_token %}
+        <div class="col-sm-4">
+            <input type="radio" id="radio_1" name="gender" value="other" checked> all
+            <input type="radio" id="radio_2" name="gender" value="mois" > Mois
+            <input type="radio" id="radio_3" name="gender" value="annee">Annee
+
+        </div>
+        <div class="col-sm-8">
+            <dl class="hiddenj">
+                <dt class="col-sm-1">MOIS</dt>
+                <dd class="col-sm-2">{{ form.mois }}</dd>
+                <dt class="col-sm-1">ANNEE</dt>
+                <dd class="col-sm-4">{{ form.annee }}</dd>
+                <dd class="col-sm-3"><input id="aff_id" type="submit" value="afficher" /></dd>
+            </dl>
+        </div>
+    </form>
+</div>
+<div class="row" id="statContenu">
+
+<div class="well col-sm-5">
+    {{bar_chart2|safe}}
+
+
+</div>
+    <dl class="well col-sm-5">
+        <dd><span class="label label-info">PRISE EN CHARGE MEDICAL : <span class="badge">{{pc}}</span></span>
+</dd>
+        <dd><span class="label label-danger">ORDONNANCE : <span class="badge">{{ordo}}</span></span>
+</dd>
+        <dd><span class="label label-primary">TAUX : <span class="badge">{{taux}} </span>MRO</span>
+</dd>
+        <dd><span class="label label-success">REMBOURSE : <span class="badge">{{rem}} </span>MRO</span>
+</dd>
+
+    </dl>
+</div>
+
+
+<!--<embed type = "image/svg+xml" src = "/path/to/static/graph.svg" width = "90">-->

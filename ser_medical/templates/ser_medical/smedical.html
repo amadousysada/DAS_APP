@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% load static %}
+{% block JheadScript %}
+    <script src="{% static 'ser_medical/js/smedical.js' %}" type="text/javascript"></script>
+	{% endblock %}
+{% block stylesheet%}
+	<link href="{% static 'ser_medical/css/accueil.css'%}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block service%}SERVICE MEDICAL{% endblock %}
+{% block content%}
+{% if user.is_authenticated %}
+<div class="container row ">
+	<ul  class="nav nav-tabs panel panel-default  col-sm-offset-2 col-sm-11">
+		<li ><a href="{% url 'accueil'%}" id="home" class="pan_title2 active"><img width="50" height="35" src="{% static 'ser_medical/images/home.ico'%}"></a></li>
+		<li ><img width="2" height="40" src="{% static 'ser_medical/images/shared/nav/divider.jpg' %}"></li>
+		<li ><a href="#" id="stats" class="pan_title2 active">Stats</a></li>
+		<li ><img width="2" height="40" src="{% static 'ser_medical/images/shared/nav/divider.jpg' %}"></li>
+		<li class="dropdown">
+			<a href="#piece" class="dropdown-toggle pan_title2" data-toggle="dropdown">
+				prise en charge medicale<span class="badge red">24</span>
+			</a>
+			<ul class="dropdown-menu">
+				<li><a href="#" id="lpcm" class="pan_title2">Liste</a></li>
+				<li class="divider"></li>
+				<li><a href="#" id="pcm" class="pan_title2">Ajouter</a></li>
+			</ul>
+		</li>
+		<li ><img width="2" height="40" src="{% static 'ser_medical/images/shared/nav/divider.jpg' %}"></li>
+
+		<!--========================================-->
+
+		<li class="dropdown">
+			<a href="#piece" class="dropdown-toggle pan_title2" data-toggle="dropdown">Piece Comptable<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="#" id="lpc" class="pan_title2">Liste</a></li>
+				<li class="divider"></li>
+				<li><a href="#" id="pc" class="pan_title2">Ajouter</a></li>
+			</ul>
+		</li>
+		<li ><img width="2" height="40" src="{% static 'ser_medical/images/shared/nav/divider.jpg' %}"></li>
+
+		<li class="dropdown">
+			<a href="#ordo" class="dropdown-toggle pan_title2" data-toggle="dropdown">Ordonnance<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="#" id="lor" class="pan_title2">Liste</a></li>
+				<li class="divider"></li>
+				<li><a href="#" id="aor" class="pan_title2">Ajouter</a></li>
+			</ul>
+		</li>
+		<li ><img width="2" height="40" src="{% static 'ser_medical/images/shared/nav/divider.jpg' %}"></li>
+
+		<li class="dropdown">
+			<a href="#clinique" class="dropdown-toggle pan_title2" data-toggle="dropdown">Cliniques<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="#listeclinique" id="lc" class="pan_title2">Liste</a></li>
+				<li class="divider"></li>
+				<li><a href="#ajouterclinique" id="ajc" class="pan_title2">Ajouter</a></li>
+			</ul>
+		</li>
+		<li ><img width="2" height="40" src="{% static 'ser_medical/images/shared/nav/divider.jpg' %}"></li>
+	</ul>
+</div>
+<div class="panel panel-default container" id="smedContenu">
+	<div id="chartContainer">VOTRE STATISTIQUE ICI</div>
+	<div id="chart-1">{{ output|safe }}</div>
+	<!--<canvas id="myChart" width="400" height="400"></canvas>-->
+<!--<script>-->
+<!--var ctx = document.getElementById("myChart");-->
+<!--var myChart = new Chart(ctx, {-->
+    <!--type: 'bar',-->
+    <!--data: {-->
+        <!--labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],-->
+        <!--datasets: [{-->
+            <!--label: '# of Votes',-->
+            <!--data: [12, 19, 3, 5, 2, 3],-->
+            <!--backgroundColor: [-->
+                <!--'rgba(255, 99, 132, 0.2)',-->
+                <!--'rgba(54, 162, 235, 0.2)',-->
+                <!--'rgba(255, 206, 86, 0.2)',-->
+                <!--'rgba(75, 192, 192, 0.2)',-->
+                <!--'rgba(153, 102, 255, 0.2)',-->
+                <!--'rgba(255, 159, 64, 0.2)'-->
+            <!--],-->
+            <!--borderColor: [-->
+                <!--'rgba(255,99,132,1)',-->
+                <!--'rgba(54, 162, 235, 1)',-->
+                <!--'rgba(255, 206, 86, 1)',-->
+                <!--'rgba(75, 192, 192, 1)',-->
+                <!--'rgba(153, 102, 255, 1)',-->
+                <!--'rgba(255, 159, 64, 1)'-->
+            <!--],-->
+            <!--borderWidth: 1-->
+        <!--}]-->
+    <!--},-->
+    <!--options: {-->
+        <!--scales: {-->
+            <!--yAxes: [{-->
+                <!--ticks: {-->
+                    <!--beginAtZero:true-->
+                <!--}-->
+            <!--}]-->
+        <!--}-->
+    <!--}-->
+<!--});-->
+<!--</script>-->
+</div>
+{%endif%}
+{% endblock %}

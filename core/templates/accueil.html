@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+{% block JheadScript %}
+    <script src="{% static 'core/js/accueil.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block stylesheet%}
+        <link href="{% static 'core/css/accueil.css'%}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block title %}Home{% endblock %}
+
+{% block content%}
+    {% if user.is_authenticated %}
+
+    <div class="container row">
+
+        <div class="panel panel-default col-sm-3" id="gt">
+            <div class="">
+                <a href="#" class="va" id="btnER">
+                    <img src="{% static 'core/images/service.jpg' %}" width="220" height="110" alt="Add Moment">
+                </a>
+            </div>
+            <div class=" panel-body" id="bd">
+                <div id="sm" >
+                    <a href="{% url 'medicale_page' %}">
+                        <img class="img-circle" src="{% static 'core/images/smed.PNG' %}" width="150" height="60" align="middle">
+                    </a>
+                </div>
+                <div id="sr" >
+                    <a href="{% url 'retraite_page' %}">
+                        <img class="img-circle" src="{% static 'core/images/sret.PNG' %}" width="150" height="60" align="middle">
+                    </a>
+                </div>
+                <div id="saps">
+                    <a href="{% url 'action_page' %}">
+                        <img  class="img-circle" src="{% static 'core/images/ssoc.PNG' %}" width="150" height="60" align="middle">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9" id="contenu">
+            <div id="mdBv">DIRECTION DES AFFAIRES SOCIALES</div>
+        </div>
+
+        <div class="dropdown col-sm-offset-12">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{% static 'core/images/menu2.png' %}" width="70" height="50" alt="logout"></a>
+			<ul class="dropdown-menu">
+            <li><a href="#" id="logoutBtn" type="button" class="pan_title2">logout</a></li>
+			</ul>
+        </div>
+    </div>
+{% else %}
+ <a href="{% url 'login_page' %}"  type="button" >Veillez vous authentifie sil vous plait</a>
+{% endif%}
+{% endblock%}

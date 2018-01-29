@@ -1,0 +1,16 @@
+.templatemo_middle {
+	clear: both;
+	position: relative;
+	width: 100%;
+	height: 100px;
+	padding: 0px 0px 0;
+	margin-bottom:10px;
+	color:#9ecefa;
+	background:url("/static/images/background4.jpg")
+}
+.mid_title {font-family: 'Lobster', cursive; font-size: 24px; font-weight: 20px; color:  #009900;margin-top: 30px;}
+.mid_left { float: left; margin-left: 50px; margin-top: 10px; width: 500px; }
+.mid_left p { font-size: 25px; color: #c9c5cd; margin-bottom: 20px; }
+.mid_left .viewall { clear: both; float: right; display: block; margin-top: 20px; width: 136px; height: 50px; background: url(images/templatemo_viewall_btn.png) no-repeat }
+.logo{float: right;}
+.tw_bullet { color:#09a09e; padding-left: 20px; font-weight: 700; }

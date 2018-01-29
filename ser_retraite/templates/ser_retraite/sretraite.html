@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block JheadScript %}
+    <script src="{% static 'ser_retraite/js/sretraite.js' %}" type="text/javascript"></script>
+{% endblock %}
+
+{% block stylesheet%}
+	<link href="{% static 'ser_retraite/css/accueil.css'%}" rel="stylesheet" type="text/css">
+	<link href="{% static 'ser_retraite/css/recherche.css'%}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+
+{% block service%}SERVICE RETRAITE{% endblock %}
+
+{% block content%}
+
+{% if user.is_authenticated %}
+    <div class="container">
+		<div class=" row">
+			<ul  class="nav nav-tabs panel panel-default  col-sm-10">
+				<li ><a href="{% url 'accueil'%}" class="pan_title2 active"><img width="50" height="35" src="{% static 'core/images/home.ico'%}"></a></li>
+				<li ><img width="2" height="40" src="{% static 'core/images/shared/nav/divider.jpg' %}"></li>
+				<li ><a href="#" id="stats" page="retcontent" class="pan_title2 active">Stats</a></li>
+				<li ><img width="2" height="40" src="{% static 'core/images/shared/nav/divider.jpg' %}"></li>
+				<li ><a href="#" id="af" class="pan_title2 active">Allocation</a></li>
+				<li ><img width="2" height="40" src="{% static 'core/images/shared/nav/divider.jpg' %}"></li>
+				<li class="dropdown">
+					<a href="#piece" class="dropdown-toggle pan_title2" data-toggle="dropdown">Droits<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#" id="lpcm" class="pan_title2">Maternite</a></li>
+						<li class="divider"></li>
+						<li><a href="#" id="pcm" class="pan_title2">Retraite</a></li>
+					</ul>
+				</li>
+				<li ><img width="2" height="40" src="{% static 'core/images/shared/nav/divider.jpg' %}"></li>
+				<li ><a href="#engagement" id="eng" class="pan_title2 active">Engagements</a></li>
+				<li ><img width="2" height="40" src="{% static 'core/images/shared/nav/divider.jpg' %}"></li>
+				<li>
+					<form class="form">
+						<div class="recherche">
+							<input id="cherche_id" name="q" placeholder="Rechercher" type="search"/>
+							<button id="search_sub" type="submit">ok</button>
+						</div>
+					</form>
+				</li>
+			</ul>
+		</div>
+		<div  id="retcontent" class="panel panel-default"></div>
+	</div>
+
+{% endif %}
+{% endblock %}

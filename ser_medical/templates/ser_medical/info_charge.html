@@ -1,0 +1,88 @@
+<style>
+    body {
+      background-color: #f7f7f7;
+    }
+    .ctnu{
+margin-left:20px;
+}
+    .dl-horizontal dd {
+    margin-left: 180px;
+  }.dl-horizontal dt {
+    float: left;
+    width: 160px;
+    overflow: hidden;
+    clear: left;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+    .espace{margin-top:40px;}
+.espace1{margin-top:15px;}
+    .entete ul{
+    list-style:none;
+    }
+    .pan_title {
+    font-family: 'Lobster', cursive;
+    font-size: 25px;
+    font-weight: 15px;
+    color:  #009900;
+}.pce{
+font-family: 'Lobster', cursive;
+    font-size: 15px;
+    font-weight: 105px;
+    color:  #000;}.titrep1{
+margin-left:40px;
+}.col-sm-offset-9 {
+    margin-left: 65%;
+  }.col-sm-offset-2 {
+    margin-left: 16.66666667%;
+  }
+  .col-sm-offset-8 {
+    margin-left: 66.66666667%;
+  }
+  </style>
+<div id="_{{piece.id}}_p2" class="modal fade" role="dialog" aria-labelledby="_{{piece.id}}_title" aria-hidden="true">
+    <div>
+
+        <div class="entete">
+            <ul class="devise">
+                <li>BANQUE CENTRALE DE MAURITANIE</li>
+                <li>DIRECTION DES AFFAIRES SOCIALES</li>
+                <li>SERVICE MEDICAL</li>
+            </ul>
+        </div>
+        <div class="espace"></div>
+        <div class="col-sm-offset-9">Nouakchott le {{piece.date_soin.date}}</div>
+        <div class="espace"></div>
+        <div class="titrep row">
+            <span class="titrep1">N____{{piece.id}}______/</span>
+            <span class="col-sm-offset-2 pce">PRISE EN CHARGE</span>
+        </div>
+        <div class="espace"></div>
+        <div class="ctnu">
+        Nous soussignes, Banque Centrale de Mauritanie, nous nous engageons à prendre en charge<br>
+        à hauteur de 100% frais...............................................et Epreuve d’effort de
+        ………………………………….<br><div class="espace"></div>
+
+        Cadre de notre Institution.<br><div class="espace"></div>
+        <span class="ctnu2">Envoyé ce jour auprès du : {{piece.clinique.libele}}<br></span>
+        <div class="espace"></div>
+        La presentation du livret familial est exigee<br>
+        <div class="espace"></div>
+        <span class="ctnuPr"> La duree de validité de cette prise en charge est d’un mois
+    à partir de la date de signature.
+    <br>
+        <div class="espace"></div>
+        Toute prise en charge non utilisée dans le délai susmentionné
+    doit être impérativement retournée à l’administration de la banque
+    </span>
+
+        </div>
+        <div class="espace"></div>
+        <div class="pce col-sm-offset-8">
+            LE DIRECTEUR-ADJOINT
+        </div>
+        <div class="espace1"></div>
+        <div class="pce col-sm-offset-8">BOCAR D. DIAGANA</div>
+    </div>
+</div>
